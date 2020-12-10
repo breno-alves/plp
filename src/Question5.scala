@@ -36,6 +36,5 @@ object Question5 extends App{
 
   val list = List(1, 2, 3, 4, 5, 6, 7, 8, 3, 5)
   println(solver(list, 3))
-
   println(solver(list, 8))
 }
