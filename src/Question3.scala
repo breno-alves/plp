@@ -7,8 +7,8 @@ object Question3 extends App{
 
   def solve(lis: List[Int], acc: List[Int]): List[Int] = lis match {
     case Nil => acc
-    case lis if lis.length >= 2 => solve(lis.tail.tail, lis.head::lis.tail.head::acc)
-    case lis if lis.length < 2 => solve(lis.tail, lis.head::acc)
+    case head::tail => solve(tail.tail, head::tail.head::acc)
+    case head::Nil => solve(Nil, head::acc)
   }
 
   val lis = List[Int](1, 2, 3, 4, 5, 6)
