@@ -21,7 +21,7 @@ object Question1 extends App {
   */
 
   def solver(xs: List[Int], target: Int): String = xs match {
-    case x if x.length == 0 => "Nao"
+    case Nil => "Nao"
     case x if x.head == target => "Sim"
     case _ => solver(xs.tail, target)
   }
