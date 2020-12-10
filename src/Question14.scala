@@ -10,7 +10,9 @@ object Question14 extends App {
 
   def solve(lis: List[Int], n: Int): List[Int] = {
     lis match {
-      case head::Nil => List(head, n)
+      case Nil => List(n)
+      case head::Nil if head >= n => List(n, head)
+      case head::Nil if head < n => List(head, n)
       case head::tail if (head < n && tail.head > n) => List(head, n):::tail
       case head::tail => head::solve(tail, n)
     }

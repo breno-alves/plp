@@ -4,7 +4,14 @@ object Question11 extends App {
   * Resolver usando recursão e pattern matching.
   * */
 
-  /*def solve(l1: List[Int], l2: List[Int]) = l1 match {
-    case head::
-  }*/
+  def solve(a: List[Int], b: List[Int]): List[Int] = a match {
+    case first :: rest => first :: solve(b, rest)
+    case _ => b
+  }
+
+  val a = List(1, 2, 3, 4)
+  val b = List(10, 20)
+
+  print(solve(a, b))
+
 }

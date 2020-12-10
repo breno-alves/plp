@@ -7,9 +7,10 @@ object Question15 extends App {
 
   def appendinorder(lis: List[Int], n: Int): List[Int] = {
     lis match {
-      case Nil => lis
-      case head::Nil => List(head, n)
-      case head::tail if (head < n && tail.head > n) => List(head, n):::tail
+      case Nil => List(n)
+      case head::Nil if head >= n => List(n, head)
+      case head::Nil if head < n => List(head, n)
+      case head::tail if (head < n && tail.head >= n) => List(head, n):::tail
       case head::tail => head::appendinorder(tail, n)
     }
   }
@@ -22,8 +23,6 @@ object Question15 extends App {
     }
   }
 
-  val lis = List(1,3,2,3,5,8,1)
-  val list = List(1,2,3,4,5,6,8,9,10)
-  //println(appendinorder(list,7))
+  val lis = List(1,3,2,3,5,10,8)
   println(solve(lis, List()))
 }
