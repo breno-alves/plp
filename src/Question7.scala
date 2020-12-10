@@ -35,10 +35,19 @@ object Question7 extends App {
      v.filter(e => e < 0).max
   }
 
+  def auxD(n : Int): Int = {
+    List.range(2, n-1).foldLeft(0)((acc, element) => if (n % element == 0) acc + element else acc)
+  }
+
+  def solveD(v: Vector[Int]): Int = {
+    v.map(auxD).reduce((acc, element) => acc + element)
+  }
+
   val v = gerador()
 
   println("Initial: " + v + "\n")
-  println("A)\n" + solveA(v))
+  ("A)\n" + solveA(v))
   println("\nB)\n" + solveB(v))
   println("\nC)\n" + solveC(v))
+  println("\nD\n" + solveD(v))
 }
