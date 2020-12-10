@@ -31,7 +31,7 @@ object Question5 extends App{
 
   def solver(lis: List[Int], target: Int): Boolean = {
     val ans = aux(lis, target, List())
-    ans.length > 1
+    ans.length == 1
   }
 
   val list = List(1, 2, 3, 4, 5, 6, 7, 8, 3, 5)
